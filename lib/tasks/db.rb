@@ -12,6 +12,8 @@ namespace :db do
     migrations_directory = 'migrations'
     connection_string = ENV['DATABASE_URL'] || ENV["DATABASE_URL_#{environment.upcase}"]
 
+    p ENV
+
     raise "Missing Connection string" if connection_string.nil?
 
     db = Sequel.connect(connection_string)
